@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Practice</title><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <style>
+       .zen-kaku-gothic-new-regular {
+            font-family: "Zen Kaku Gothic New", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        body {
+            font-family: "Zen Kaku Gothic New", sans-serif;
+            background-color: #e6f7ff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .speech-bubble {
+            display: inline-block;
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            position: relative;
+            margin-left: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent #fff transparent;
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .sentence-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .record-button, .listen-button, .native-listen-button, .word-listen-button {
+            background-color: #a3d9c6;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .record-button:hover, .listen-button:hover, .native-listen-button:hover, .word-listen-button:hover {
+            background-color: #8ac2a4;
+        }
+        .translation {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .question-button {
+            background: transparent;
+            border: none;
+            color: #007bff; /* 질문 버튼 색상 */
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 5px;
+        }
+        .highlight {
+            color: #ff4081; /* 영어 단어 강조 색상 */
+            font-weight: bold;
+        }
+
+        .navigation-button {
+            position: fixed;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .level-button {
+            position: fixed;
+            left: 20px; /* 왼쪽 상단 위치 */
+            top: 20px;
+            background-color: #007bff;
+            font-size: 14px;
+        }
+        .next-button {
+            right: 20px; /* 오른쪽 하단 위치 */
+        }
+        .home-button {
+            left: 20px; /* 왼쪽 하단 위치 */
+            bottom: 20px; /* 하단 위치 */
+        }
+        .question-button {
+            background: transparent;
+            border: none;
+            color: #007bff; /* 질문 버튼 색상 */
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sentence Practice</h1>
+    <div class="speech-bubble">
+        The sentences repeat three times, so read them and record them yourself.
+    </div>
+
+    <div class="video-container">
+        <!-- 문장 리스트 -->
+        <div class="sentence-card">
+            <p>The <span class="highlight">FLOWER</span> bloomed in the garden <button class="question-button" onclick="location.href='index.sentenceaccent.html'">?</button></p>
+            <p class="translation">日本語: 花が庭に咲きました。</p>
+            <button class="native-listen-button" onclick="listenNative(1)">Listen Native</button>
+           
+            <button class="record-button" onclick="location.href='index.sentencerecord.html'">Record</button>
+            <div>
+                <button class="word-listen-button" onclick="listenWord('The')">The</button>
+                <button class="word-listen-button" onclick="listenWord('FLOWER')">FLOWER</button>
+                <button class="word-listen-button" onclick="listenWord('bloomed')">bloomed</button>
+                <button class="word-listen-button" onclick="listenWord('in')">in</button>
+                <button class="word-listen-button" onclick="listenWord('the')">the</button>
+                <button class="word-listen-button" onclick="listenWord('garden')">garden</button>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <p>The <span class="highlight">BIRD</span> flew <span class="highlight">HIGH</span> in the sky <button class="question-button" onclick="location.href='index.html'">?</button></p>
+            <p class="translation">日本語: 鳥が空高く飛んでいました。</p>
+            <button class="native-listen-button" onclick="listenNative(2)">Listen Native</button>
+            
+            <button class="record-button" onclick="recordSentence(2)">Record</button>
+            <div>
+                <button class="word-listen-button" onclick="listenWord('The')">The</button>
+                <button class="word-listen-button" onclick="listenWord('BIRD')">BIRD</button>
+                <button class="word-listen-button" onclick="listenWord('flew')">flew</button>
+                <button class="word-listen-button" onclick="listenWord('HIGH')">HIGH</button>
+                <button class="word-listen-button" onclick="listenWord('in')">in</button>
+                <button class="word-listen-button" onclick="listenWord('the')">the</button>
+                <button class="word-listen-button" onclick="listenWord('sky')">sky</button>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <p>The child <span class="highlight">CAREFULLY</span> crossed the road <button class="question-button" onclick="location.href='index.html'">?</button></p>
+            <p class="translation">日本語: 子供が注意深く道を渡りました。</p>
+            <button class="native-listen-button" onclick="listenNative(3)">Listen Native</button>
+            
+            <button class="record-button" onclick="recordSentence(3)">Record</button>
+            <div>
+                <button class="word-listen-button" onclick="listenWord('The')">The</button>
+                <button class="word-listen-button" onclick="listenWord('child')">child</button>
+                <button class="word-listen-button" onclick="listenWord('CAREFULLY')">CAREFULLY</button>
+                <button class="word-listen-button" onclick="listenWord('crossed')">crossed</button>
+                <button class="word-listen-button" onclick="listenWord('the')">the</button>
+                <button class="word-listen-button" onclick="listenWord('road')">road</button>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <p>The <span class="highlight">WIND</span> blew <span class="highlight">GENTLY</span> through the trees <button class="question-button" onclick="location.href='index.html'">?</button></p>
+            <p class="translation">日本語: 風が木々の間を優しく吹き抜けました。</p>
+            <button class="native-listen-button" onclick="listenNative(4)">Listen Native</button>
+            
+            <button class="record-button" onclick="recordSentence(4)">Record</button>
+            <div>
+                <button class="word-listen-button" onclick="listenWord('The')">The</button>
+                <button class="word-listen-button" onclick="listenWord('WIND')">WIND</button>
+                <button class="word-listen-button" onclick="listenWord('blew')">blew</button>
+                <button class="word-listen-button" onclick="listenWord('GENTLY')">GENTLY</button>
+                <button class="word-listen-button" onclick="listenWord('through')">through</button>
+                <button class="word-listen-button" onclick="listenWord('the')">the</button>
+                <button class="word-listen-button" onclick="listenWord('trees')">trees</button>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <p>The <span class="highlight">WATERFALL</span> was breathtaking <button class="question-button" onclick="location.href='index.html'">?</button></p>
+            <p class="translation">日本語: 滝は息を呑むほど美しかったです。</p>
+            <button class="native-listen-button" onclick="listenNative(5)">Listen Native</button>
+           
+            <button class="record-button" onclick="recordSentence(5)">Record</button>
+            <div>
+                <button class="word-listen-button" onclick="listenWord('The')">The</button>
+                <button class="word-listen-button" onclick="listenWord('WATERFALL')">WATERFALL</button>
+                <button class="word-listen-button" onclick="listenWord('was')">was</button>
+                <button class="word-listen-button" onclick="listenWord('breathtaking')">breathtaking</button>
+            </div>
+        </div>
+
+        <button class="navigation-button level-button" onclick="location.href='level_test.html'">Level Test</button>
+        
+        <button class="navigation-button home-button" onclick="location.href='index.html'">Home</button>
+        
+        <!-- Level Buttons -->
+        <button class="navigation-button level-button" onclick="location.href='level1.html'">Level 1</button>
+        <button class="navigation-button level-button" onclick="location.href='index.sentencepr.html'">Level 1</button>
+    </div>
+</body>
+</html>

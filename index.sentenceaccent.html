@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intonation and Emphasis Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .sentence-box {
+            font-size: 2em;
+            margin: 20px 0;
+            color: #333;
+            font-weight: bold;
+        }
+        .audio-button {
+            margin-left: 10px;
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .audio-button:hover {
+            background-color: #2980b9;
+        }
+        .explanation, .intonation-guide {
+            margin: 20px auto;
+            width: 80%;
+            text-align: left;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .explanation p, .intonation-guide p {
+            font-size: 1.1em;
+        }
+        .translate-button {
+            margin-top: 15px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .translate-button:hover {
+            background-color: #45a049;
+        }
+        .back-button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: #d35400;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Intonation and Emphasis Practice</h1>
+    
+    <div class="sentence-box">
+        I <span class="highlight">FOUND</span> a frog.
+        <button class="audio-button" onclick="playAudio('found')">Listen</button>
+    </div>
+
+    <div class="explanation">
+        <p><strong>How to Pronounce:</strong> In this sentence, raise your intonation slightly on the word "<span class="highlight">FOUND</span>," giving it more emphasis. This way, it shows that finding the frog is the main action of interest.</p>
+        <p>This rising intonation makes the sentence sound more engaging and helps listeners focus on the action ("FOUND").</p>
+    </div>
+
+    <button class="translate-button" onclick="playJapaneseTranslation()">日本語で聞く</button>
+
+    <div class="intonation-guide">
+        <h3>Understanding Intonation and Emphasis</h3>
+        <p>In English, intonation often rises on important words to show focus. Here, "FOUND" is emphasized to show that finding something is the key action.</p>
+        <p><strong>Changing Emphasis:</strong> The meaning of the sentence can change depending on where we place emphasis:</p>
+        <ul>
+            <li><strong>I</strong> found a frog. &mdash; Emphasizes who found it.
+                <button class="audio-button" onclick="playAudio('emphasis_i')">Listen</button>
+            </li>
+            <li>I <strong>FOUND</strong> a frog. &mdash; Emphasizes the action of finding.
+                <button class="audio-button" onclick="playAudio('emphasis_found')">Listen</button>
+            </li>
+            <li>I found a <strong>FROG</strong>. &mdash; Emphasizes what was found.
+                <button class="audio-button" onclick="playAudio('emphasis_frog')">Listen</button>
+            </li>
+        </ul>
+    </div>
+
+    <button class="back-button" onclick="location.href='index.sentencepr.html'">Go Back</button>
+
+    <script>
+        // JavaScript function to play Japanese translation
+        function playJapaneseTranslation() {
+            alert("Playing Japanese translation...");
+            // Add code to play the Japanese audio file here
+        }
+
+        // JavaScript function to play audio files
+        function playAudio(type) {
+            alert("Playing audio for: " + type);
+            // Add code to play the specific audio file here
+        }
+
+        // JavaScript function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>
